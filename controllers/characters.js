@@ -65,8 +65,11 @@ exports.deleteCharacter = async (req, res) => {
     if (!deletedCharacter) {
       return res.status(404).json({ error: 'Character not found' });
     }
-    res.json(deletedCharacter);
+
+    // Redirect to the character list page after successful deletion
+    res.redirect('/characters/list');
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete the character' });
   }
 };
+

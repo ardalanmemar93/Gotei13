@@ -14,8 +14,14 @@
         Class: <%= character.dndClass %><br>
         Equipment: <%= character.equipment.join(', ') %><br>
         <!-- Add other character attributes here -->
+        
+        <!-- Form for deleting the character -->
+        <form method="POST" action="/characters/<%= character._id %>?_method=DELETE">
+          <button type="submit">Delete</button>
+        </form>
       </li>
     <% }); %>
   </ul>
 </body>
 </html>
+
