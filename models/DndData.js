@@ -4,7 +4,7 @@ const dndDataSchema = new mongoose.Schema({
     type: {
         type: String,
         required: true,
-        enum: ['classes', 'backgrounds', 'race', 'equipment', 'mosters', 'skills'],
+        enum: ['classes', 'background', 'race', 'equipment', 'mosters', 'skills'],
     },
     name: {
         type: String,

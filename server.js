@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 
 
@@ -16,7 +17,8 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const dndRouter = require('./routes/dndRoutes');
-// const commentsRouter = require('./routes/comments');
+const charactersRouter = require('./routes/characters');
+
 
 
 
@@ -47,10 +49,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', dndRouter);
-// app.use('/', commentsRouter);
+app.use('/characters', charactersRouter);
 
 
 // catch 404 and forward to error handler
