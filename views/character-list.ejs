@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Character List</title>
-</head>
-<body>
-  <h1>Character List</h1>
-  <ul>
-    <% characters.forEach(function(character) { %>
+  <head>
+    <title>Character List</title>
+  </head>
+  <body>
+    <h1>Character List</h1>
+    <ul>
+      <% characters.forEach(function(character) { %>
       <li>
-        Character Name: <%= character.name %><br>
-        Race: <%= character.race %><br>
-        Background: <%= character.background %><br>
-        Class: <%= character.dndClass %><br>
-        Equipment: <%= character.equipment.join(', ') %><br> 
-       
-         <form method="POST" action="/characters/<%= character._id %>?_method=DELETE">
+        Character Name: <%= character.name %><br />
+        Race: <%= character.race %><br />
+        Background: <%= character.background %><br />
+        Class: <%= character.dndClass %><br />
+        Equipment: <%= character.equipment.join(', ') %><br />
+        <a href="/characters/update/<%= character._id %>">Update</a>
+
+        <!-- Comment form for each character -->
+        <form
+          method="POST"
+          action="/characters/<%= character._id %>/comments"
+        >
+          <label for="comment">Comment:</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+          <button type="submit">Submit Comment</button>
+        </form>
+
+        <!-- Display existing comments for this character -->
+        <h3>Comments:</h3>
+        <ul>
+          <% character.comments.forEach(function(comment) { %>
+            <li><%= comment.text %></li>
+          <% }); %>
+        </ul>
+
+        <!-- Delete button form -->
+        <form
+          method="POST"
+          action="/characters/<%= character._id %>?_method=DELETE"
+        >
           <button type="submit">Delete</button>
         </form>
-        <a href="/characters/update/<%= character._id %>">Update</a>
       </li>
-    <% }); %>
-  </ul>
-</body>
+      <% }); %>
+    </ul>
+  </body>
 </html>
-
-

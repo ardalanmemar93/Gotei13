@@ -9,6 +9,13 @@ const characterSchema = new mongoose.Schema({
   background: String,
   dndClass: String,
   equipment: [String],  
+
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Comment'
+    }
+  ]
  
 });
 
