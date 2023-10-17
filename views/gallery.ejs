@@ -1,0 +1,26 @@
+
+<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Character Gallery</title>
+</head>
+<body>
+  <h1>Character Gallery</h1>
+  <p>Welcome to the Character Gallery!</p>
+  <h2>Published Characters:</h2>
+  <ul>
+    <% characters.forEach(function(character) { %>
+      <li>
+        <strong>Name:</strong> <%= character.name %><br>
+        <strong>Race:</strong> <%= character.race %><br>
+        <strong>Background:</strong> <%= character.background %><br>
+        <strong>Class:</strong> <%= character.dndClass %><br>
+        <strong>Equipment:</strong> <%= character.equipment.join(', ') %><br>
+        <a href="/characters/<%= character._id %>">View Character Details</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
+

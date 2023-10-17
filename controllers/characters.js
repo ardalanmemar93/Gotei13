@@ -1,8 +1,10 @@
+
 const Character = require('../models/character');
 
 // Create a new character
 exports.createCharacter = async (req, res) => {
   const characterData = req.body;
+  characterData.author = req.user._id;
 
   try {
     const newCharacter = new Character(characterData);
@@ -56,4 +58,32 @@ exports.deleteCharacter = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete the character' });
   }
 };
+
+
+
+// Publish a character by ID
+exports.publishCharacter = async (req, res) => {
+  try {
+    const characterId = req.params.id;
+
+    // Find the character by ID
+    const character = await Character.findById(characterId);
+
+    if (!character) {
+      return res.status(404).json({ error: 'Character not found' });
+    }
+
+    // Set the character's "published" field to true
+    character.published = true;
+
+    await character.save();
+
+    // Redirect to the gallery or any relevant page
+    res.redirect('/gallery');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to publish the character' });
+  }
+};
+
 

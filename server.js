@@ -18,6 +18,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const dndRouter = require('./routes/dndRoutes');
 const charactersRouter = require('./routes/characters');
+const profileRouter = require('./routes/profile');
+const galleryRouter = require('./routes/gallery');
 
 
 
@@ -50,11 +52,12 @@ app.use(function (req, res, next) {
 });
 
 
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', dndRouter);
 app.use('/characters', charactersRouter);
+app.use('/profile', profileRouter);
+app.use('/gallery', galleryRouter);
 
 
 // catch 404 and forward to error handler
