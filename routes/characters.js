@@ -18,7 +18,8 @@ router.get('/create', (req, res) => {
   // Route to render the list of characters
   router.get('/list', async (req, res) => {
     try {
-      const characters = await Character.find();
+      const characters = await Character.find().populate('comments');
+      
       res.render('character-list', { characters });
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve characters' });
@@ -65,26 +66,24 @@ router.put('/update/:id', async (req, res) => {
   
 
 
-// Route to handle comment submission for a specific character
-router.post('/:id/comments', async (req, res) => {
-    // Retrieve the character ID from the URL
+  router.post('/:id/comments', async (req, res) => {
     const characterId = req.params.id;
+    const text = req.body.comment;
   
-    // Retrieve comment data from the request body
-    const commentData = req.body;
+    console.log('Received comment text:', text);
   
     try {
-      // Find the character by ID
       const character = await Character.findById(characterId);
   
       if (!character) {
+        console.log('Character not found');
         return res.status(404).json({ error: 'Character not found' });
       }
   
       // Create a new comment
-      const newComment = new Comment(commentData);
-      newComment.character = character;
-      newComment.author = req.user;
+      const newComment = new Comment({ text, author: req.user._id, character: characterId });
+  
+      console.log('New comment data:', newComment);
   
       await newComment.save();
       character.comments.push(newComment);
@@ -93,9 +92,14 @@ router.post('/:id/comments', async (req, res) => {
       // Redirect back to the characters/list page
       res.redirect('/characters/list');
     } catch (error) {
-      // Error handling if necessary
+      console.error('Error:', error);
+      
     }
   });
+  
+  
+  
+  
 
 
 

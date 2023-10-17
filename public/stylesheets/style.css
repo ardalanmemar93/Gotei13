@@ -26,41 +26,40 @@ p {
   text-align: center;
 }
 
-/* Style for comment list */
-ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+
+/* ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
 }
 
-/* Style for individual comments */
+
 li {
-  margin-bottom: 10px; /* Spacing between comments */
+  margin-bottom: 10px; 
 }
 
-/* Style for comment text */
+
 li {
-  background-color: #f5f5f5; /* Background color for comments */
-  padding: 10px; /* Padding around comment text */
-  border: 1px solid #ddd; /* Border around each comment */
-  border-radius: 5px; /* Rounded corners */
+  background-color: #f5f5f5; 
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
 }
 
-/* Style for comment text */
+
 li p {
-  margin: 0; /* Remove default margin for <p> elements */
-  font-size: 14px; /* Adjust the font size */
-  color: #333; /* Text color */
+  margin: 0; 
+  font-size: 14px; 
+  color: #333; 
 }
 
-/* Style for comment author or timestamp, if applicable */
+
 li .comment-author {
   font-size: 12px;
   color: #777;
 }
 
-/* Style for comment timestamp, if applicable */
 li .comment-timestamp {
   font-size: 12px;
   color: #777;
-}
+} */

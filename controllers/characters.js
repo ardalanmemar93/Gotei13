@@ -7,7 +7,6 @@ exports.createCharacter = async (req, res) => {
   try {
     const newCharacter = new Character(characterData);
     await newCharacter.save();
-    // Assuming your character list page URL is "/characters/list"
     res.redirect('/characters/list');
   } catch (error) {
     res.status(500).json({ error: 'Character creation failed' });
