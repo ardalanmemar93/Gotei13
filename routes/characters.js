@@ -62,13 +62,7 @@ router.put('/update/:id', async (req, res) => {
 
 
 
-
-
-
-
-  
-
-
+//comments
   router.post('/:id/comments', async (req, res) => {
     const characterId = req.params.id;
     const text = req.body.comment;
@@ -100,7 +94,7 @@ router.put('/update/:id', async (req, res) => {
     }
   });
   
-  router.post('/:id/publish', characterController.publishCharacter);
+router.post('/:id/publish', characterController.publishCharacter);
 
 
 // Route to delete a character by ID
