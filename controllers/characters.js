@@ -41,20 +41,20 @@ exports.getCharacterById = async (req, res) => {
 };
 
 // Update a character by ID
-exports.updateCharacter = async (req, res) => {
-  const characterId = req.params.id;
-  const updatedData = req.body;
+// exports.updateCharacter = async (req, res) => {
+//   const characterId = req.params.id;
+//   const updatedData = req.body;
 
-  try {
-    const updatedCharacter = await Character.findByIdAndUpdate(characterId, updatedData, { new: true });
-    if (!updatedCharacter) {
-      return res.status(404).json({ error: 'Character not found' });
-    }
-    res.json(updatedCharacter);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update the character' });
-  }
-};
+//   try {
+//     const updatedCharacter = await Character.findByIdAndUpdate(characterId, updatedData, { new: true });
+//     if (!updatedCharacter) {
+//       return res.status(404).json({ error: 'Character not found' });
+//     }
+//     res.json(updatedCharacter);
+//   } catch (error) {
+//     res.status(500).json({ error: 'Failed to update the character' });
+//   }
+// };
 
 // Delete a character by ID
 exports.deleteCharacter = async (req, res) => {

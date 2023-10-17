@@ -29,7 +29,35 @@ router.get('/create', (req, res) => {
 router.get('/:id', characterController.getCharacterById);
 
 // Route to update a character by ID
-router.put('/:id', characterController.updateCharacter);
+router.get('/update/:id', async (req, res) => {
+  const characterId = req.params.id;
+  try {
+    const character = await Character.findById(characterId);
+    if (!character) {
+      return res.status(404).json({ error: 'Character not found' });
+    }
+    res.render('character-update', { character }); // Render a character update form
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve the character' });
+  }
+});
+
+router.put('/update/:id', async (req, res) => {
+    const characterId = req.params.id;
+    const updatedData = req.body;
+  
+    try {
+      const updatedCharacter = await Character.findByIdAndUpdate(characterId, updatedData, { new: true });
+      if (!updatedCharacter) {
+        return res.status(404).json({ error: 'Character not found' });
+      }
+      //redirect
+      res.redirect('/characters/list');
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to update the character' });
+    }
+  });
+
 
 // Route to delete a character by ID
 router.delete('/:id', characterController.deleteCharacter);
