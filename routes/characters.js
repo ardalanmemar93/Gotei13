@@ -112,21 +112,21 @@ router.delete('/:id', characterController.deleteCharacter);
 
 
 
-// router.get('/gallery/:id/story', async (req, res) => {
-//   try {
-//     const characterId = req.params.id;
+router.get('/gallery/:id/story', async (req, res) => {
+  try {
+    const characterId = req.params.id;
 
-//     const character = await Character.findById(characterId);
+    const character = await Character.findById(characterId);
 
-//     if (!character) {
-//       return res.status(404).send('Character not found');
-//     }
-//     res.render('story', { characterStory: character.story });
-//   } catch (error) {
-//     console.error('Error:', error);
-//     res.status(500).send('Internal Server Error');
-//   }
-// });
+    if (!character) {
+      return res.status(404).send('Character not found');
+    }
+    res.render('story', { characterStory: character.story });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 
