@@ -20,6 +20,12 @@
         <form method="POST" action="/characters/<%= character._id %>/publish">
           <button type="submit">Publish</button>
         </form>
+        <form
+          method="POST"
+          action="/characters/<%= character._id %>?_method=DELETE"
+        >
+          <button type="submit">Delete</button>
+        </form>
       </li>
     <% }); %>
   </ul>

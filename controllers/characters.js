@@ -53,7 +53,7 @@ exports.deleteCharacter = async (req, res) => {
     }
 
     // Redirect to the character list page after successful deletion
-    res.redirect('/characters/list');
+    res.redirect('/profile');
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete the character' });
   }
