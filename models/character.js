@@ -23,7 +23,8 @@ const characterSchema = new mongoose.Schema({
   published: {
     type: Boolean,
     default: false,
-  }
+  },
+
  
 });
 
