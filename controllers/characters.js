@@ -1,5 +1,6 @@
 
 const Character = require('../models/character');
+const Comment = require('../models/comment')
 
 // Create a new character
 exports.createCharacter = async (req, res) => {
@@ -9,7 +10,7 @@ exports.createCharacter = async (req, res) => {
   try {
     const newCharacter = new Character(characterData);
     await newCharacter.save();
-    res.redirect('/characters/list');
+    res.redirect('/profile');
   } catch (error) {
     res.status(500).json({ error: 'Character creation failed' });
   }
@@ -40,6 +41,9 @@ exports.getCharacterById = async (req, res) => {
     res.status(500).json({ error: 'Failed to retrieve the character' });
   }
 };
+
+
+
 
 
 // Delete a character by ID
@@ -87,3 +91,19 @@ exports.publishCharacter = async (req, res) => {
 };
 
 
+
+ // Delete a comment by ID
+exports.deleteComment = async (req, res) => {
+  const commentId = req.params.commentId;
+
+  try {
+  // Find the comment by ID
+    await Comment.findByIdAndDelete(commentId);
+
+    // Redirect back to the character's comments or another relevant page
+    res.redirect(`/profile`);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Failed to delete the comment' });
+  }
+};

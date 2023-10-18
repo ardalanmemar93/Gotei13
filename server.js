@@ -55,9 +55,13 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/', dndRouter);
-app.use('/characters', charactersRouter);
 app.use('/profile', profileRouter);
 app.use('/gallery', galleryRouter);
+
+
+app.use('/characters', charactersRouter);
+
+
 
 
 // catch 404 and forward to error handler

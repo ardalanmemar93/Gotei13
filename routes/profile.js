@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   const userId = req.user._id;
 
   try {
-    const characters = await Character.find({ author: userId });
+    const characters = await Character.find({ author: userId }).populate('comments');
 
     if (!characters || characters.length === 0) {
       return res.render('profile', { characters: [] }); 

@@ -25,6 +25,8 @@ router.get('/create', (req, res) => {
       res.status(500).json({ error: 'Failed to retrieve characters' });
     }
   });
+
+
   
 
 // Route to retrieve a specific character by ID
@@ -86,14 +88,18 @@ router.put('/update/:id', async (req, res) => {
       character.comments.push(newComment);
       await character.save();
   
-      // Redirect back to the characters/list page
-      res.redirect('/characters/list');
+      // Redirect back to the profile page
+      res.redirect('/profile');
     } catch (error) {
       console.error('Error:', error);
       
     }
   });
-  
+
+// Route to delete a comment by ID
+router.delete('/:characterId/comments/:commentId', characterController.deleteComment);
+
+  //  Route to publish
 router.post('/:id/publish', characterController.publishCharacter);
 
 
