@@ -3,6 +3,7 @@ const router = express.Router();
 const characterController = require('../controllers/characters');
 const Character = require('../models/character'); 
 const Comment = require('../models/comment');
+const generateStoryController = require('../controllers/generateStory');
 
 // Route to create a new character
 router.post('/', characterController.createCharacter);
@@ -126,8 +127,9 @@ router.get('/gallery/:id/story', async (req, res) => {
     if (!character) {
       return res.status(404).send('Character not found');
     }
-   
-    res.render('story', { characterStory: character.story });
+    const Story = await generateStoryController.createStory(character);
+    console.log(Story);
+    res.render('story', { characterStory: Story });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).send('Internal Server Error');

@@ -17,7 +17,7 @@
         <strong>Background:</strong> <%= character.background %><br>
         <strong>Class:</strong> <%= character.dndClass %><br>
         <strong>Equipment:</strong> <%= character.equipment.join(', ') %><br>
-        <a href="/gallery/<%= character._id %>/story">View Character Story</a>
+        <a href="/characters/gallery/<%= character._id %>/story">View Character Story</a>
          <!-- Comment form for each character -->
          <form method="POST" action="/characters/<%= character._id %>/comments">
           <label for="comment">Comment:</label>

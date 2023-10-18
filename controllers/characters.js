@@ -4,6 +4,7 @@ const Character = require('../models/character');
 const Comment = require('../models/comment');
 
 
+
 // Create a new character
 exports.createCharacter = async (req, res) => {
   const characterData = req.body;
