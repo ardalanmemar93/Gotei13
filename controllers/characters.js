@@ -2,6 +2,7 @@
 const Character = require('../models/character');
 const Comment = require('../models/comment')
 
+
 // Create a new character
 exports.createCharacter = async (req, res) => {
   const characterData = req.body;
@@ -15,6 +16,9 @@ exports.createCharacter = async (req, res) => {
     res.status(500).json({ error: 'Character creation failed' });
   }
 };
+
+
+
 
 
 // Retrieve a list of characters
@@ -107,3 +111,7 @@ exports.deleteComment = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete the comment' });
   }
 };
+
+
+
+

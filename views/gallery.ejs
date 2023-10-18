@@ -17,7 +17,7 @@
         <strong>Background:</strong> <%= character.background %><br>
         <strong>Class:</strong> <%= character.dndClass %><br>
         <strong>Equipment:</strong> <%= character.equipment.join(', ') %><br>
-        <a href="/characters/<%= character._id %>">View Character Details</a>
+        <a href="/gallery/<%= character._id %>/story">View Character Story</a>
       </li>
     <% }); %>
   </ul>

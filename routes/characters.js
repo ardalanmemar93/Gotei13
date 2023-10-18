@@ -32,6 +32,9 @@ router.get('/create', (req, res) => {
 // Route to retrieve a specific character by ID
 router.get('/:id', characterController.getCharacterById);
 
+
+
+
 // Route to update a character by ID
 router.get('/update/:id', async (req, res) => {
   const characterId = req.params.id;
@@ -105,6 +108,26 @@ router.post('/:id/publish', characterController.publishCharacter);
 
 // Route to delete a character by ID
 router.delete('/:id', characterController.deleteCharacter);
+
+
+
+
+// router.get('/gallery/:id/story', async (req, res) => {
+//   try {
+//     const characterId = req.params.id;
+
+//     const character = await Character.findById(characterId);
+
+//     if (!character) {
+//       return res.status(404).send('Character not found');
+//     }
+//     res.render('story', { characterStory: character.story });
+//   } catch (error) {
+//     console.error('Error:', error);
+//     res.status(500).send('Internal Server Error');
+//   }
+// });
+
 
 
 module.exports = router;

@@ -20,6 +20,8 @@ const dndRouter = require('./routes/dndRoutes');
 const charactersRouter = require('./routes/characters');
 const profileRouter = require('./routes/profile');
 const galleryRouter = require('./routes/gallery');
+const generateStoryController = require('./controllers/generateStory');
+
 
 
 
@@ -57,6 +59,8 @@ app.use('/users', usersRouter);
 app.use('/', dndRouter);
 app.use('/profile', profileRouter);
 app.use('/gallery', galleryRouter);
+app.post('/generateStory', generateStoryController.createStory);
+
 
 
 app.use('/characters', charactersRouter);
