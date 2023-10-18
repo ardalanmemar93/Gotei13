@@ -99,6 +99,7 @@ exports.publishCharacter = async (req, res) => {
  // Delete a comment by ID
 exports.deleteComment = async (req, res) => {
   const commentId = req.params.commentId;
+  
 
   try {
   // Find the comment by ID

@@ -59,7 +59,7 @@ router.put('/update/:id', async (req, res) => {
         return res.status(404).json({ error: 'Character not found' });
       }
       //redirect
-      res.redirect('/characters/list');
+      res.redirect('/profile');
     } catch (error) {
       res.status(500).json({ error: 'Failed to update the character' });
     }
@@ -71,7 +71,7 @@ router.put('/update/:id', async (req, res) => {
   router.post('/:id/comments', async (req, res) => {
     const characterId = req.params.id;
     const text = req.body.comment;
-  
+   
     console.log('Received comment text:', text);
   
     try {
@@ -81,10 +81,9 @@ router.put('/update/:id', async (req, res) => {
         console.log('Character not found');
         return res.status(404).json({ error: 'Character not found' });
       }
-  
       // Create a new comment
       const newComment = new Comment({ text, author: req.user._id, character: characterId });
-  
+
       console.log('New comment data:', newComment);
   
       await newComment.save();
@@ -98,6 +97,12 @@ router.put('/update/:id', async (req, res) => {
       
     }
   });
+
+
+
+
+
+
 
 // Route to delete a comment by ID
 router.delete('/:characterId/comments/:commentId', characterController.deleteComment);
@@ -114,19 +119,22 @@ router.delete('/:id', characterController.deleteCharacter);
 
 router.get('/gallery/:id/story', async (req, res) => {
   try {
+   
     const characterId = req.params.id;
-
     const character = await Character.findById(characterId);
-
+    
     if (!character) {
       return res.status(404).send('Character not found');
     }
+   
     res.render('story', { characterStory: character.story });
   } catch (error) {
     console.error('Error:', error);
     res.status(500).send('Internal Server Error');
   }
 });
+
+
 
 
 
