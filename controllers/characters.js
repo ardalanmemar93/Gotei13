@@ -1,6 +1,8 @@
-
+const express = require('express');
+const router = express.Router();
 const Character = require('../models/character');
-const Comment = require('../models/comment')
+const Comment = require('../models/comment');
+
 
 
 // Create a new character
