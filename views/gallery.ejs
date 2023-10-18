@@ -18,6 +18,31 @@
         <strong>Class:</strong> <%= character.dndClass %><br>
         <strong>Equipment:</strong> <%= character.equipment.join(', ') %><br>
         <a href="/gallery/<%= character._id %>/story">View Character Story</a>
+         <!-- Comment form for each character -->
+         <form method="POST" action="/characters/<%= character._id %>/comments">
+          <label for="comment">Comment:</label>
+          <textarea
+            id="comment"
+            name="comment"
+            rows="4"
+            cols="50"
+            required
+          ></textarea>
+          <button type="submit">Submit Comment</button>
+        </form>
+
+        <!-- Display existing comments -->
+        <h3>Comments:</h3>
+        <ul>
+          <% character.comments.forEach(function(comment) { %>
+            <li>
+              <%= comment.text %>
+              <form method="POST" action="/characters/<%= character._id %>/comments/<%= comment._id %>?_method=DELETE">
+                <button type="submit">Delete Comment</button>
+              </form>
+            </li>
+          <% }); %>
+        </ul>
       </li>
       
     <% }); %>

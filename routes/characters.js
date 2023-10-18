@@ -20,7 +20,7 @@ router.get('/create', (req, res) => {
     try {
       const characters = await Character.find().populate('comments');
       
-      res.render('character-list', { characters });
+      res.render('gallery', { characters });
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve characters' });
     }
@@ -91,7 +91,7 @@ router.put('/update/:id', async (req, res) => {
       await character.save();
   
       // Redirect back to the profile page
-      res.redirect('/profile');
+      res.redirect('/gallery');
     } catch (error) {
       console.error('Error:', error);
       

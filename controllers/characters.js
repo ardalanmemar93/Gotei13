@@ -4,7 +4,6 @@ const Character = require('../models/character');
 const Comment = require('../models/comment');
 
 
-
 // Create a new character
 exports.createCharacter = async (req, res) => {
   const characterData = req.body;
@@ -98,23 +97,52 @@ exports.publishCharacter = async (req, res) => {
 
 
 
- // Delete a comment by ID
-exports.deleteComment = async (req, res) => {
-  const commentId = req.params.commentId;
+//  // Delete a comment by ID
+// exports.deleteComment = async (req, res) => {
+//   const commentId = req.params.commentId;
   
 
+//   try {
+//   // Find the comment by ID
+//     await Comment.findByIdAndDelete(commentId);
+
+//     // Redirect back to the character's comments or another relevant page
+//     res.redirect(`/gallery`);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: 'Failed to delete the comment' });
+//   }
+// };
+
+
+// Delete a comment by ID
+exports.deleteComment = async (req, res) => {
+  const commentId = req.params.commentId;
+  const userId = req.user._id; // Assuming you're using a user authentication system
+
   try {
-  // Find the comment by ID
+    // Find the comment by ID
+    const comment = await Comment.findById(commentId);
+
+    if (!comment) {
+      return res.status(404).json({ error: 'Comment not found' });
+    }
+
+    // Check if the current user is the author of the comment
+    if (comment.author.toString() !== userId.toString()) {
+      return res.status(403).json({ error: "You're not authorized to delete this comment" });
+    }
+
+    // Delete the comment if the authorization check passed
     await Comment.findByIdAndDelete(commentId);
 
     // Redirect back to the character's comments or another relevant page
-    res.redirect(`/profile`);
+    res.redirect(`/gallery`);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: 'Failed to delete the comment' });
   }
 };
-
 
 
 

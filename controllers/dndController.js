@@ -1,4 +1,4 @@
-const DndData = require('../models/DnDData');
+
 const axios = require('axios');
 
 async function fetchAndSaveData(type) {
