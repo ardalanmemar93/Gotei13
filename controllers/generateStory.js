@@ -26,7 +26,7 @@ async function createStory(character) {
           messages: [
             {"role": "system", "content": "You are a storytelling assistant."},
             {"role": "user", 
-            "content": ` Generate a short dark, horror fantasy story that refrences D&D world based on the following prompt:
+            "content": ` Generate a short dark, horror fantasy story that refrences D&D lore based on the following prompt:
             In a world of magic and mystery, there lived a hero named ${name}. ${name} was a ${race} from a ${background} background, trained as a ${dndClass}. Equipped with ${equipment}, they embarked on a grand adventure. Describe their dark and grim journey and bone chilling encounters in captivating detail.`}
           ],
           temperature: 0.5,
