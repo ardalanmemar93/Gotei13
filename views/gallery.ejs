@@ -1,9 +1,4 @@
 <%- include('./partials/header') %>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Character Gallery</title>
-</head>
 <body class="gallery-body">
   <div class="container">
     <h1 class="mt-5 white">Character Gallery</h1>
@@ -19,7 +14,8 @@
         <p class="card-text"><strong>Class:</strong> <%= character.dndClass %></p>
         <p class="card-text"><strong>Equipment:</strong> <%= character.equipment.join(', ') %></p>
         <a href="/characters/gallery/<%= character._id %>/story" class="btn btn-primary">View An Exclusive One Time Character Story</a>
-        
+        <button class="btn btn-info generate-story-button" data-character-id="<%= character._id %>">Generate Story</button>
+
       </div>
 
       <!-- Comment form for each character -->
@@ -55,4 +51,6 @@
     <% }); %>
   </div>
 </body>
+<script type="text/javascript" src="/javascripts/fetch.js"></script>
+  
 </html>
