@@ -35,10 +35,12 @@
         <h3>Comments:</h3>
         <ul class="list-group">
           <% character.comments.forEach(function(comment) { %>
+            <div>
             <li class="list-group-item">
               <%= comment.text %>
+            </div>
               <form method="POST" action="/characters/<%= character._id %>/comments/<%= comment._id %>?_method=DELETE" style="display: inline;">
-                <button type="submit" class="btn btn-danger">Delete Comment</button>
+                <button id="delete-comment" type="submit" class="btn btn-danger">Delete Comment</button>
               </form>
             </li>
           <% }); %>

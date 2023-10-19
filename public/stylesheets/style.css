@@ -193,3 +193,6 @@ p {
   text-align: center;
 }
 
+#delete-comment {
+  margin-top: 1rem;
+}
