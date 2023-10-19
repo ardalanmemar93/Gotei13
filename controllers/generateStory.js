@@ -30,7 +30,7 @@ async function createStory(character) {
             In a world of magic and mystery, there lived a hero named ${name}. ${name} was a ${race} from a ${background} background, trained as a ${dndClass}. Equipped with ${equipment}, they embarked on a grand adventure. Describe their dark and grim journey and bone chilling encounters in captivating detail.`}
           ],
           temperature: 0.5,
-          max_tokens: 2000
+          max_tokens: 1000
         })
       });
       const data = await response.json();
