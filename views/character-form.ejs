@@ -11,87 +11,144 @@
       <div class="mb-3">
         <label for="race" class="form-label">Race:</label>
         <select id="race" name="race" class="form-select">
-          <option value="human">Human</option>
-          <option value="elf">Elf</option>
-          <option value="dwarf">Dwarf</option>
-          <option value="halfling">Halfling</option>
-          <option value="gnome">Gnome</option>
-          <option value="half-elf">Half-Elf</option>
-          <option value="half-orc">Half-Orc</option>
-          <option value="tiefling">Tiefling</option>
-          <option value="aarakocra">Aarakocra</option>
-          <option value="genasi">Genasi</option>
-          <option value="goliath">Goliath</option>
-          <!-- Add more race options here -->
+          <option value="human">Human: Humans are adaptable and diverse.</option>
+          <option value="elf">Elf: Elves are known for their grace and keen senses.</option>
+          <option value="dwarf">Dwarf: Dwarves are known for their resilience and craftsmanship.</option>
+          <option value="halfling">Halfling: Halflings are small and nimble.</option>
+          <option value="gnome">Gnome: Gnomes are known for their inventiveness.</option>
+          <option value="half-elf">Half-Elf: Half-Elves are a mix of humans and elves.</option>
+          <option value="half-orc">Half-Orc: Half-Orcs have human and orc ancestry.</option>
+          <option value="tiefling">Tiefling: Tieflings have infernal ancestry, giving them unique abilities and often a fiendish appearance.</option>
+          <option value="aarakocra">Aarakocra: Bird-like humanoids with the ability to fly.</option>
+          <option value="gensai">Genasi: Genasi are infused with elemental power.</option>
+          <option value="goliath">Goliath: Goliaths are large, strong humanoids.</option>
+          <option value="aasimar">Aasimar: Aasimar have celestial ancestry, granting them angelic features and abilities.</option>
+          <option value="firebolg">Firebolg: Firbolgs are giant-kin known for their connection to nature.</option>
+          <option value="triton">Triton: Tritons are aquatic beings with an affinity for the sea.</option>
+          <option value="yuan-ti pureblood">Yuan-ti Pureblood: Snake-like humanoids with innate magical abilities.</option>
+          <option value="tabaxi">Tabaxi: Cat-like humanoids known for their agility and curiosity.</option>
+          <option value="kenku">Kemku: Bird-like creatures with a talent for mimicry.</option>
+          <option value="lizardfolk">Lizardfolk: Reptilian humanoids known for their survival skills.</option>
+          <option value="tortle">Tortle: Tortles are turtle-like beings with a natural affinity for water.</option>
+          <option value="changeling">Changeling: Changelings can alter their appearance.</option>
+          <option value="kalashtar">Kalashtar: Humanoids with a connection to a spiritual entity.</option>
+          <option value="Shifter">Shifter: Shifters have an innate ability to change certain physical features.</option>
+          <option value="warforged">Warforged: Warforged are constructs with a humanoid appearance, created for war</option>
+          <option value="dragonborn">Dragonborn: Dragonborn have dragon-like ancestry, and their abilities and appearance can be influenced by the type of dragon.</option>
+         
         </select>
       </div>
 
       <div class="mb-3">
         <label for="background" class="form-label">Background:</label>
         <select id="background" name="background" class="form-select">
-          <option value="noble">Noble</option>
-          <option value="outlander">Outlander</option>
-          <option value="acolyte">Acolyte</option>
-          <option value="sage">Sage</option>
-          <option value="folk-hero">Folk Hero</option>
-          <option value="criminal">Criminal</option>
-          <option value="hermit">Hermit</option>
-          <option value="knight">Knight</option>
-          <option value="pirate">Pirate</option>
-          <option value="sailor">Sailor</option>
-          <!-- Add more background options here -->
+          <option value="noble">Noble: You are a member of a noble family with privileges and responsibilities.</option>
+          <option value="outlander">Outlander: You have lived in the wilderness or a distant land, away from civilization.</option>
+          <option value="acolyte">Acolyte: You are a devoted servant of a deity and have spent your life in religious study.</option>
+          <option value="sage">Sage: You are a scholar, researcher, or teacher with a deep understanding of various subjects.</option>
+          <option value="folk-hero">Folk Hero: You are a commoner who rose to fame by performing a great deed for your community.
+          </option>
+          <option value="criminal">Criminal: You have a history of illegal activities and connections to the criminal underworld.
+          </option>
+          <option value="hermit">Hermit: You have lived in seclusion for years, seeking knowledge or spiritual insight.
+          </option>
+          <option value="knight">Knight: You are a squire or a fully-fledged knight, dedicated to a noble cause.</option>
+          <option value="sailor">Sailor: You are a sailor or pirate, comfortable on the high seas.</option>
+          <option value="city-watch">City Watch: You are a member of a city's law enforcement, protecting its citizens.</option>
+          <option value="clan-crafter">Clan Crafter: You are a member of a dwarven clan, skilled in crafting and stonework.</option>
+          <option value="cloistered-scholar">Cloistered Scholar: You have access to a wealth of knowledge, thanks to your scholarly pursuits.</option>
+          <option value="courtier">Courtier: You are skilled in navigating the intricacies of courtly life and politics.
+          </option>
+          <option value="faction-agent">Faction Agent: You are a member of a secret organization or faction.</option>
+          <option value="far-traveler">Far Traveler: You come from a distant land, bringing unique customs and experiences.
+          </option>
+          <option value="inheritor">Inheritor: You have inherited a powerful item or a mission from a family member.
+          </option>
+          <option value="mercenary-veteran">Mercenary Veteran: You have served as a soldier of fortune in various conflicts.</option>
+          <option value="urban-bounty-hunter">Urban Bounty Hunter: You track down and capture criminals in a city's streets.</option>
+          <option value="charlatan">Charlatan: You are a master of deception and have made a living by fooling others.</option>
+       
         </select>
       </div>
 
       <div class="mb-3">
         <label for="dndClass" class="form-label">Class:</label>
         <select id="dndClass" name="dndClass" class="form-select">
-          <option value="fighter">Fighter</option>
-          <option value="wizard">Wizard</option>
-          <option value="rogue">Rogue</option>
-          <option value="cleric">Cleric</option>
-          <option value="bard">Bard</option>
-          <option value="sorcerer">Sorcerer</option>
-          <option value="druid">Druid</option>
-          <option value="paladin">Paladin</option>
-          <option value="monk">Monk</option>
-          <option value="ranger">Ranger</option>
-          <!-- Add more class options here -->
+          <option value="barbarian">Barbarian: Barbarians are fierce warriors who channel their rage into powerful combat abilities. They are known for their brute strength and resilience.</option>
+          <option value="bard">Bard: Bards are versatile performers and spellcasters. They use their music and charm to cast spells, inspire their allies, and even engage in combat.</option>
+          <option value="cleric">Cleric: Clerics are divine spellcasters and holy warriors who serve gods. They can heal allies, banish undead, and wield divine magic in battle.</option>
+          <option value="druid">Druid: Druids are nature-focused spellcasters who have a deep connection to the natural world. They can shapeshift, cast nature spells, and communicate with animals.</option>
+          <option value="fighter">Fighter: Fighters are masters of martial combat. They excel in weapons and armor and can specialize in various combat styles.</option>
+          <option value="monk">Monk: Monks are disciplined warriors who use their body as a weapon. They are skilled in unarmed combat and can harness inner energy for special abilities.</option>
+          <option value="paladin">Paladin: Paladins are holy knights dedicated to justice and righteousness. They wield divine powers, protect the innocent, and smite their foes.</option>
+          <option value="ranger">Ranger: Rangers are skilled hunters and wilderness experts. They have proficiency with a bow, track enemies, and have natural survival abilities.</option>
+          <option value="rogue">Rogue: Rogues are stealthy and cunning adventurers. They excel in sneaking, lockpicking, and backstabbing, making them effective spies and thieves.</option>
+          <option value="sorcerer">Sorcerer: Sorcerers have innate magical abilities. They can cast spells without formal training and often have unique magical origins.</option>
+          <option value="warlock">Warlock: Warlocks make pacts with powerful otherworldly beings. They gain magical abilities and spells from their patrons.</option>
+          <option value="wizard">Wizard: Wizards are studious spellcasters who learn magic through research and study. They can cast a wide range of spells and often specialize in a particular school of magic.</option>
+         
         </select>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Equipment:</label>
-        <div class="form-check">
-          <input type="checkbox" id="sword" name="equipment" value="sword" class="form-check-input equipment-checkbox">
-          <label for="sword" class="form-check-label">Sword</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="shield" name="equipment" value="shield" class="form-check-input equipment-checkbox">
-          <label for="shield" class="form-check-label">Shield</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="staff" name="equipment" value="staff" class="form-check-input equipment-checkbox">
-          <label for="staff" class="form-check-label">Staff</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="dagger" name="equipment" value="dagger" class="form-check-input equipment-checkbox">
-          <label for="dagger" class="form-check-label">Dagger</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="bow" name="equipment" value="bow" class="form-check-input equipment-checkbox">
-          <label for="bow" class="form-check-label">Bow</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="chainmail" name="equipment" value="chainmail" class="form-check-input equipment-checkbox">
-          <label for="chainmail" class="form-check-label">Chainmail</label>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="potion" name="equipment" value="potion" class="form-check-input equipment-checkbox">
-          <label for="potion" class="form-check-label">Potion</label>
-        </div>
+            <div class="form-check">
+              <input type="checkbox" id="sword" name="equipment" value="sword" class="form-check-input equipment-checkbox">
+              <label for="sword" class="form-check-label">Sword</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="shield" name="equipment" value="shield" class="form-check-input equipment-checkbox">
+              <label for "shield" class="form-check-label">Shield</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="staff" name="equipment" value="staff" class="form-check-input equipment-checkbox">
+              <label for="staff" class="form-check-label">Staff</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="dagger" name="equipment" value="dagger" class="form-check-input equipment-checkbox">
+              <label for="dagger" class="form-check-label">Dagger</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="bow" name="equipment" value="bow" class="form-check-input equipment-checkbox">
+              <label for="bow" class="form-check-label">Bow</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="chainmail" name="equipment" value="chainmail" class="form-check-input equipment-checkbox">
+              <label for="chainmail" class="form-check-label">Chainmail</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="potion" name="equipment" value="potion" class="form-check-input equipment-checkbox">
+              <label for="potion" class="form-check-label">Potion</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="axe" name="equipment" value="axe" class="form-check-input equipment-checkbox">
+              <label for="axe" class="form-check-label">Axe</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="hammer" name="equipment" value="hammer" class="form-check-input equipment-checkbox">
+              <label for="hammer" class="form-check-label">Hammer</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="bow" name="equipment" value="wand" class="form-check-input equipment-checkbox">
+              <label for="wand" class="form-check-label">Wand</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="ring" name="equipment" value="ring" class="form-check-input equipment-checkbox">
+              <label for="ring" class="form-check-label">Ring</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="amulet" name="equipment" value="amulet" class="form-check-input equipment-checkbox">
+              <label for="amulet" class="form-check-label">Amulet</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="katana" name="equipment" value="katana" class="form-check-input equipment-checkbox">
+              <label for="katana" class="form-check-label">katana</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="wakazashi" name="equipment" value="wakazashi" class="form-check-input equipment-checkbox">
+              <label for="wakazashi" class="form-check-label">Wakazashi</label>
+            </div>
       </div>
-      <!-- Add additional fields for other character attributes as needed -->
 
       <button type="submit" class="btn btn-primary">Create Character</button>
     </form>
