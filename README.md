@@ -39,12 +39,19 @@ Users can also generate AI-authored stories about their characters, adding a new
 
 
 View your profile page.
+
 ![Gotei13 Wireframe](/public/images/wireframe2.png)
+
  Create and update characters.
+
 ![Gotei13 Wireframe](/public/images/wireframe3.png)
+
 View an AI generated story.
+
 ![Gotei13 Wireframe](/public/images/wireframe4.png)
+
 Log In.
+
 ![Gotei13 Wireframe](/public/images/wireframe5.png)
 
 ## Features
@@ -60,7 +67,7 @@ Log In.
 
 ## Technologies used
 
-In the development of the Gotei13 application, a versatile stack of technologies was harnessed to create a seamless user experience. HTML, the backbone of web content, provides the structure and foundation for the application, ensuring that users can interact with the system's components effortlessly. CSS and Bootstrap were utilized to craft a visually appealing and responsive front-end, offering a dynamic and user-friendly interface.
+In the development of the Gotei13 application, a versatile stack of technologies was harnessed to create a seamless user experience. HTML, the backbone of web content, provides the structure and foundation for the application, ensuring that users can interact with the system's components effortlessly. CSS and Bootstrap were utilized to craft a visually appealing and responsive front-end, offering a dynamic and user-friendly interface. EJS (Embedded JavaScript) was used for rendering dynamic content on the front-end, providing a way to embed JavaScript code directly within HTML templates.
 
 On the server side, Node.js and Express.js came into play to create a robust back-end, enabling smooth data flow and functionality behind the scenes. MongoDB, a NoSQL database, was employed to manage and store user data and character information efficiently, while Mongoose provided an elegant schema-based solution for data modeling.
 
