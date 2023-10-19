@@ -98,23 +98,6 @@ exports.publishCharacter = async (req, res) => {
 
 
 
-//  // Delete a comment by ID
-// exports.deleteComment = async (req, res) => {
-//   const commentId = req.params.commentId;
-  
-
-//   try {
-//   // Find the comment by ID
-//     await Comment.findByIdAndDelete(commentId);
-
-//     // Redirect back to the character's comments or another relevant page
-//     res.redirect(`/gallery`);
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ error: 'Failed to delete the comment' });
-//   }
-// };
-
 
 // Delete a comment by ID
 exports.deleteComment = async (req, res) => {

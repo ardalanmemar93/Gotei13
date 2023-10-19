@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Shadows+Into+Light&display=swap');
 
+#create-color {
+  color: rgba(0, 0, 0, 0.65)
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
-}
-
 .google {
   height: 25px;
 }
@@ -184,14 +182,14 @@ p {
 
 .user-profile {
   font-family: Poiret One;
-  font-size: 5rem;
-  font-weight: bold;
+  font-size: 3em;
 }
 
 .poiret {
-  font-family: Poiret;
-  font-size: 2rem;
+  font-family: Poiret One;
+  font-size: 2em;
 }
 .poem {
   text-align: center;
 }
+
