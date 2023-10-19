@@ -1,15 +1,15 @@
 <%- include('./partials/header') %>
 <body class="character-body">
   <div class="container">
-    <h1 class="mt-5 white">Create a New Character</h1>
+    <h1 class="mt-5 white user-profile">Create a New Character</h1>
     <form method="POST" action="/characters" class="mt-4">
       <div class="mb-3">
-        <label for="name" class="form-label">Character Name:</label>
+        <label for="name" class="form-label poiret">Character Name:</label>
         <input type="text" id="name" name="name" required class="form-control">
       </div>
 
       <div class="mb-3">
-        <label for="race" class="form-label">Race:</label>
+        <label for="race" class="form-label poiret">Race:</label>
         <select id="race" name="race" class="form-select">
           <option value="human">Human: Humans are adaptable and diverse.</option>
           <option value="elf">Elf: Elves are known for their grace and keen senses.</option>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="background" class="form-label">Background:</label>
+        <label for="background" class="form-label poiret">Background:</label>
         <select id="background" name="background" class="form-select">
           <option value="noble">Noble: You are a member of a noble family with privileges and responsibilities.</option>
           <option value="outlander">Outlander: You have lived in the wilderness or a distant land, away from civilization.</option>
@@ -72,7 +72,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="dndClass" class="form-label">Class:</label>
+        <label for="dndClass" class="form-label poiret">Class:</label>
         <select id="dndClass" name="dndClass" class="form-select">
           <option value="barbarian">Barbarian: Barbarians are fierce warriors who channel their rage into powerful combat abilities. They are known for their brute strength and resilience.</option>
           <option value="bard">Bard: Bards are versatile performers and spellcasters. They use their music and charm to cast spells, inspire their allies, and even engage in combat.</option>
@@ -91,7 +91,7 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Equipment:</label>
+        <label class="form-label poiret">Equipment:</label>
             <div class="form-check">
               <input type="checkbox" id="sword" name="equipment" value="sword" class="form-check-input equipment-checkbox">
               <label for="sword" class="form-check-label">Sword</label>
