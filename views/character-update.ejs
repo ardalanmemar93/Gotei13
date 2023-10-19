@@ -3,15 +3,19 @@
 <html>
 <head>
   <title>Update Character</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <h1>Update Character</h1>
-  <form method="POST" action="/characters/update/<%= character._id %>?_method=PUT">
-    <label for="name">Character Name:</label>
-    <input type="text" id="name" name="name" value="<%= character.name %>" required>
-    
-        <label for="race">Race:</label>
-        <select id="race" name="race">
+  <div class="container mt-5">
+    <h1>Update Character</h1>
+    <form method="POST" action="/characters/update/<%= character._id %>?_method=PUT">
+      <div class="mb-3">
+        <label for="name" class="form-label">Character Name:</label>
+        <input type="text" id="name" name="name" value="<%= character.name %>" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="race" class="form-label">Race:</label>
+        <select id="race" name="race" class="form-select">
           <option value="human">Human</option>
           <option value="elf">Elf</option>
           <option value="dwarf">Dwarf</option>
@@ -25,9 +29,10 @@
           <option value="goliath">Goliath</option>
           <!-- Add more race options here -->
         </select>
-    
-        <label for="background">Background:</label>
-        <select id="background" name="background">
+      </div>
+      <div class="mb-3">
+        <label for="background" class="form-label">Background:</label>
+        <select id="background" name="background" class="form-select">
           <option value="noble">Noble</option>
           <option value="outlander">Outlander</option>
           <option value="acolyte">Acolyte</option>
@@ -38,71 +43,73 @@
           <option value="knight">Knight</option>
           <option value="pirate">Pirate</option>
           <option value="sailor">Sailor</option>
-        
           <!-- Add more background options here -->
         </select>
-    
-        <label for="dndClass">Class:</label>
-        <select id="dndClass" name="dndClass">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Class:</label>
+        <select id="dndClass" name="dndClass" class="form-select">
           <option value="fighter">Fighter</option>
-      <option value="wizard">Wizard</option>
-      <option value="rogue">Rogue</option>
-      <option value="cleric">Cleric</option>
-      <option value="bard">Bard</option>
-      <option value="sorcerer">Sorcerer</option>
-      <option value="druid">Druid</option>
-      <option value="paladin">Paladin</option>
-      <option value="monk">Monk</option>
-      <option value="ranger">Ranger</option>
+          <option value="wizard">Wizard</option>
+          <option value="rogue">Rogue</option>
+          <option value="cleric">Cleric</option>
+          <option value="bard">Bard</option>
+          <option value="sorcerer">Sorcerer</option>
+          <option value="druid">Druid</option>
+          <option value="paladin">Paladin</option>
+          <option value="monk">Monk</option>
+          <option value="ranger">Ranger</option>
           <!-- Add more class options here -->
         </select>
-    
-        <label>Equipment:</label>
-    <div>
-      <input type="checkbox" id="sword" name="equipment" value="sword" class="equipment-checkbox">
-      <label for="sword">Sword</label>
-    </div>
-    <div>
-      <input type="checkbox" id="shield" name="equipment" value="shield" class="equipment-checkbox">
-      <label for="shield">Shield</label>
-    </div>
-    <div>
-      <input type="checkbox" id="staff" name="equipment" value="staff" class="equipment-checkbox">
-      <label for="staff">Staff</label>
-    </div>
-    <div>
-      <input type="checkbox" id="dagger" name="equipment" value="dagger" class="equipment-checkbox">
-      <label for="dagger">Dagger</label>
-    </div>
-    <div>
-      <input type="checkbox" id="bow" name="equipment" value="bow" class="equipment-checkbox">
-      <label for="bow">Bow</label>
-    </div>
-    <div>
-      <input type="checkbox" id="chainmail" name="equipment" value="chainmail" class="equipment-checkbox">
-      <label for="chainmail">Chainmail</label>
-    </div>
-    <div>
-      <input type="checkbox" id="potion" name="equipment" value="potion" class="equipment-checkbox">
-      <label for="potion">Potion</label>
-    </div>
-
-
-    <button type="submit">Update Character</button>
-
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Equipment:</label>
+        <div class="form-check">
+          <input type="checkbox" id="sword" name="equipment" value="sword" class="form-check-input equipment-checkbox">
+          <label for="sword" class="form-check-label">Sword</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="shield" name="equipment" value="shield" class="form-check-input equipment-checkbox">
+          <label for="shield" class="form-check-label">Shield</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="staff" name="equipment" value="staff" class="form-check-input equipment-checkbox">
+          <label for="staff" class="form-check-label">Staff</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="dagger" name="equipment" value="dagger" class="form-check-input equipment-checkbox">
+          <label for="dagger" class="form-check-label">Dagger</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="bow" name="equipment" value="bow" class="form-check-input equipment-checkbox">
+          <label for="bow" class="form-check-label">Bow</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="chainmail" name="equipment" value="chainmail" class="form-check-input equipment-checkbox">
+          <label for="chainmail" class="form-check-label">Chainmail</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="potion" name="equipment" value="potion" class="form-check-input equipment-checkbox">
+          <label for="potion" class="form-check-label">Potion</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Character</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const checkboxes = document.querySelectorAll('.equipment-checkbox');
-        const maxSelections = 2; 
-      
-        checkboxes.forEach((checkbox) => {
-          checkbox.addEventListener('change', () => {
-            const selectedCheckboxes = document.querySelectorAll('.equipment-checkbox:checked');
-      
-            if (selectedCheckboxes.length > maxSelections) {
-              checkbox.checked = false;
-            }
-          });
+      const checkboxes = document.querySelectorAll('.equipment-checkbox');
+      const maxSelections = 2; 
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          const selectedCheckboxes = document.querySelectorAll('.equipment-checkbox:checked');
+
+          if (selectedCheckboxes.length > maxSelections) {
+            checkbox.checked = false;
+          }
         });
-      </script>
+      });
+    </script>
+  </div>
 </body>
 </html>
