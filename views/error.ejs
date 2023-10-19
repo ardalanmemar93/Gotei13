@@ -1,3 +1,24 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%- include('./partials/header') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR</title>
+</head>
+<body class="error-page">
+    <div class="container">
+        <h1 class="user-profile mt-5 white"><%= message %></h1>
+        <h2 class="poiret poem mt-3 white">The Magic Item you seek, so rich and pure,<br>
+            <%= error.status %>, it's not here, that's for sure.<br>
+            A mystical quest, a treasure to explore,<br>
+            In realms beyond, it's waiting for sure.</h2>
+            <h3 class="poiret poem mt-3 white">Try logging in</h3>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

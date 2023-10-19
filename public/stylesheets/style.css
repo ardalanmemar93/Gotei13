@@ -137,6 +137,27 @@ p {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
   z-index: -1;
 }
+
+
+.error-page {
+  background-image: url('/images/error-page.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.error-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: -1;
+}
+
 .lead {
   color: white;
 }
@@ -170,4 +191,7 @@ p {
 .poiret {
   font-family: Poiret;
   font-size: 2rem;
+}
+.poem {
+  text-align: center;
 }
