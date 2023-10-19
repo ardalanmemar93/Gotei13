@@ -1,4 +1,3 @@
-
 <%- include('./partials/header') %>
 <!DOCTYPE html>
 <html>
@@ -6,48 +5,53 @@
   <title>Character Gallery</title>
 </head>
 <body>
-  <h1>Character Gallery</h1>
-  <p>Welcome to the Character Gallery!</p>
-  <h2>Published Characters:</h2>
-  <ul>
+  <div class="container">
+    <h1 class="mt-5">Character Gallery</h1>
+    <p>Welcome to the Character Gallery!</p>
+    <h2 class="my-4">Published Characters:</h2>
+
     <% characters.forEach(function(character) { %>
-      <li>
-        <strong>Name:</strong> <%= character.name %><br>
-        <strong>Race:</strong> <%= character.race %><br>
-        <strong>Background:</strong> <%= character.background %><br>
-        <strong>Class:</strong> <%= character.dndClass %><br>
-        <strong>Equipment:</strong> <%= character.equipment.join(', ') %><br>
-        <a href="/characters/gallery/<%= character._id %>/story">View An Exclusive One Time Character Story</a>
-         <!-- Comment form for each character -->
-         <form method="POST" action="/characters/<%= character._id %>/comments">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title"><strong>Name:</strong> <%= character.name %></h5>
+        <p class="card-text"><strong>Race:</strong> <%= character.race %></p>
+        <p class="card-text"><strong>Background:</strong> <%= character.background %></p>
+        <p class="card-text"><strong>Class:</strong> <%= character.dndClass %></p>
+        <p class="card-text"><strong>Equipment:</strong> <%= character.equipment.join(', ') %></p>
+        <a href="/characters/gallery/<%= character._id %>/story" class="btn btn-primary">View An Exclusive One Time Character Story</a>
+      </div>
+
+      <!-- Comment form for each character -->
+      <form class="card-footer" method="POST" action="/characters/<%= character._id %>/comments">
+        <div class="form-group">
           <label for="comment">Comment:</label>
           <textarea
+            class="form-control"
             id="comment"
             name="comment"
             rows="4"
-            cols="50"
             required
           ></textarea>
-          <button type="submit">Submit Comment</button>
-        </form>
+        </div>
+        <button type="submit" class="btn btn-success">Submit Comment</button>
+      </form>
 
-        <!-- Display existing comments -->
+      <!-- Display existing comments -->
+      <div class="card-footer">
         <h3>Comments:</h3>
-        <ul>
+        <ul class="list-group">
           <% character.comments.forEach(function(comment) { %>
-            <li>
+            <li class="list-group-item">
               <%= comment.text %>
-              <form method="POST" action="/characters/<%= character._id %>/comments/<%= comment._id %>?_method=DELETE">
-                <button type="submit">Delete Comment</button>
+              <form method="POST" action="/characters/<%= character._id %>/comments/<%= comment._id %>?_method=DELETE" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete Comment</button>
               </form>
             </li>
           <% }); %>
         </ul>
-      </li>
-      
+      </div>
+    </div>
     <% }); %>
-  </ul>
+  </div>
 </body>
 </html>
-
-
