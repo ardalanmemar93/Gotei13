@@ -64,7 +64,7 @@ p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/profile-body.jpeg');
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/profile-body.jpeg'); */
 }
 
 .gallery-body {
@@ -73,5 +73,5 @@ p {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/gallery.jpeg');
+  /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/gallery.jpeg'); */
 }
