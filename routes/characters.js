@@ -7,10 +7,8 @@ const generateStoryController = require('../controllers/generateStory');
 
 // Route to create a new character
 router.post('/', characterController.createCharacter);
-
 // Route to retrieve a list of characters
 router.get('/', characterController.getCharacters);
-
 // Route to render the character creation form
 router.get('/create', (req, res) => {
     res.render('character-form');
@@ -27,14 +25,8 @@ router.get('/create', (req, res) => {
     }
   });
 
-
-  
-
 // Route to retrieve a specific character by ID
 router.get('/:id', characterController.getCharacterById);
-
-
-
 
 // Route to update a character by ID
 router.get('/update/:id', async (req, res) => {
@@ -66,13 +58,10 @@ router.put('/update/:id', async (req, res) => {
     }
   });
 
-
-
 //comments
   router.post('/:id/comments', async (req, res) => {
     const characterId = req.params.id;
     const text = req.body.comment;
-   
     console.log('Received comment text:', text);
   
     try {
@@ -84,13 +73,11 @@ router.put('/update/:id', async (req, res) => {
       }
       // Create a new comment
       const newComment = new Comment({ text, author: req.user._id, character: characterId });
-
       console.log('New comment data:', newComment);
   
       await newComment.save();
       character.comments.push(newComment);
       await character.save();
-  
       // Redirect back to the profile page
       res.redirect('/gallery');
     } catch (error) {
@@ -99,31 +86,18 @@ router.put('/update/:id', async (req, res) => {
     }
   });
 
-
-
-
-
-
-
 // Route to delete a comment by ID
 router.delete('/:characterId/comments/:commentId', characterController.deleteComment);
-
-  //  Route to publish
+ //  Route to publish
 router.post('/:id/publish', characterController.publishCharacter);
-
-
 // Route to delete a character by ID
 router.delete('/:id', characterController.deleteCharacter);
-
-
-
 
 router.get('/gallery/:id/story', async (req, res) => {
   try {
    
     const characterId = req.params.id;
     const character = await Character.findById(characterId);
-    
     if (!character) {
       return res.status(404).send('Character not found');
     }
@@ -135,9 +109,5 @@ router.get('/gallery/:id/story', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
-
-
-
 
 module.exports = router;

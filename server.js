@@ -25,7 +25,6 @@ const generateStoryController = require('./controllers/generateStory');
 
 
 
-
 var app = express();
 
 // view engine setup
@@ -62,10 +61,7 @@ app.use('/gallery', galleryRouter);
 app.post('/generateStory', generateStoryController.createStory);
 
 
-
 app.use('/characters', charactersRouter);
-
-
 
 
 // catch 404 and forward to error handler

@@ -9,9 +9,6 @@ module.exports = {
     createStory,
 };
 
-
-
-
 async function createStory(character) {
     try {
         const { name, race, background, dndClass, equipment } = character;

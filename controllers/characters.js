@@ -4,7 +4,6 @@ const Character = require('../models/character');
 const Comment = require('../models/comment');
 
 
-
 // Create a new character
 exports.createCharacter = async (req, res) => {
   const characterData = req.body;
@@ -18,10 +17,6 @@ exports.createCharacter = async (req, res) => {
     res.status(500).json({ error: 'Character creation failed' });
   }
 };
-
-
-
-
 
 // Retrieve a list of characters
 exports.getCharacters = async (req, res) => {
@@ -48,10 +43,6 @@ exports.getCharacterById = async (req, res) => {
   }
 };
 
-
-
-
-
 // Delete a character by ID
 exports.deleteCharacter = async (req, res) => {
   const characterId = req.params.id;
@@ -61,14 +52,12 @@ exports.deleteCharacter = async (req, res) => {
     if (!deletedCharacter) {
       return res.status(404).json({ error: 'Character not found' });
     }
-
     // Redirect to the character list page after successful deletion
     res.redirect('/profile');
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete the character' });
   }
 };
-
 
 
 // Publish a character by ID
@@ -96,9 +85,6 @@ exports.publishCharacter = async (req, res) => {
   }
 };
 
-
-
-
 // Delete a comment by ID
 exports.deleteComment = async (req, res) => {
   const commentId = req.params.commentId;
@@ -106,17 +92,14 @@ exports.deleteComment = async (req, res) => {
 
   try {
     // Find the comment by ID
-    const comment = await Comment.findById(commentId);
-
+    const comment = await Comment.findById(commentId)
     if (!comment) {
       return res.status(404).json({ error: 'Comment not found' });
     }
-
     // Check if the current user is the author of the comment
     if (comment.author.toString() !== userId.toString()) {
       return res.status(403).json({ error: "You're not authorized to delete this comment" });
     }
-
     // Delete the comment if the authorization check passed
     await Comment.findByIdAndDelete(commentId);
 

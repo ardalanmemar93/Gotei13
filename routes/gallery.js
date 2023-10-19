@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
   try {
     // Retrieve published characters
     const publishedCharacters = await Character.find({ published: true }).populate('comments');
-
     // Render the gallery page and pass the published characters
     res.render('gallery', { characters: publishedCharacters });
   } catch (error) {

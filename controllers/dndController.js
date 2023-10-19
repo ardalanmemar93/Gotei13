@@ -9,7 +9,6 @@ async function fetchAndSaveData(type) {
     // Loop through the fetched data and save it in your database
     for (const item of data) {
       const existingData = await DndData.findOne({ type, name: item.name });
-
       if (existingData) {
         // Update existing data if needed
         existingData.description = item.description;
