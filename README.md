@@ -119,17 +119,14 @@ async function createStory(character) {
         })
       });
       const data = await response.json();
-      console.log(data);
       const aiResponseText = data.choices[0].message.content;
-      console.log(aiResponseText);
       return aiResponseText;  
     } catch(error) {
-      console.log(error);
       console.error('Error in createWod:', error);
     
     }
-    
   }
+
 
 ```
 
