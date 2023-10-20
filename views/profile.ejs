@@ -10,19 +10,19 @@
       <% characters.forEach(function(character) { %>
       <div class="col-md-6">
         <div class="card mb-4">
-          <div class="card-body bg-secondary">
-            <h5 class="card-title poiret"><strong>Name:</strong> <%= character.name %></h5>
+          <div class="card-body bg-dark">
+            <h5 class="card-title poiret" style="color: white;"><strong>Name:</strong> <%= character.name %></h5>
             <p class="card-text"><strong>Race:</strong> <%= character.race %></p>
             <p class="card-text"><strong>Background:</strong> <%= character.background %></p>
             <p class="card-text"><strong>Class:</strong> <%= character.dndClass %></p>
             <p class="card-text"><strong>Equipment:</strong> <%= character.equipment.join(', ') %></p>
 
-            <a href="/characters/update/<%= character._id %>" class="btn btn-primary mr-2">Update</a>
+            <a href="/characters/update/<%= character._id %>" class="btn btn-outline-primary mr-2">Update</a>
             <form method="POST" action="/characters/<%= character._id %>/publish">
-              <button type="submit" class="btn btn-success mr-2">Publish</button>
+              <button type="submit" class="btn btn-outline-success mr-2">Publish</button>
             </form>
             <form method="POST" action="/characters/<%= character._id %>?_method=DELETE">
-              <button type="submit" class="btn btn-danger">Delete !</button>
+              <button type="submit" class="btn btn-outline-danger">Delete !</button>
             </form>
           </div>
         </div>
