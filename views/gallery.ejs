@@ -40,9 +40,12 @@
             <li class="list-group-item">
               <%= comment.text %>
             </div>
+            <% if (user && comment.author.toString() === user._id.toString()) { %>
               <form method="POST" action="/characters/<%= character._id %>/comments/<%= comment._id %>?_method=DELETE" style="display: inline;">
                 <button id="delete-comment" type="submit" class="btn btn-danger">Delete Comment</button>
               </form>
+            <% } %>
+            
             </li>
           <% }); %>
         </ul>
