@@ -89,10 +89,6 @@ The development of the Gotei13 application came with several challenges, includi
 
 - **Error Handling**: Implementing robust error handling to provide meaningful feedback to users when things went wrong was essential. Handling various types of errors and presenting them in a user-friendly manner required careful planning.
 
-- **Security**: Ensuring the security of user data and preventing vulnerabilities such as cross-site scripting (XSS) or cross-site request forgery (CSRF) was a significant concern. Regularly updating dependencies and applying security best practices were necessary.
-
-- **Scalability**: As the application attracted more users and data, ensuring that it could scale effectively became a challenge. Optimizing queries, performance tuning, and load testing were all part of addressing this challenge.
-
 - **User Experience**: Balancing the desire for rich features with a smooth and intuitive user experience was a continuous challenge. Striking the right balance between functionality and usability required user feedback and iterative design improvements.
 
 Despite these challenges, the development of the Gotei13 application was a rewarding experience, resulting in a platform that allows users to create and share their unique characters and stories in a captivating and interactive environment.
