@@ -16,19 +16,23 @@
       </div>
 
       <!-- Comment form for each character -->
-      <form class="card-footer bg-dark" method="POST" action="/characters/<%= character._id %>/comments">
-        <div class="form-group">
-          <label for="comment" class="poiret">Comment:</label>
-          <textarea
-            class="form-control"
-            id="comment"
-            name="comment"
-            rows="4"
-            required
-          ></textarea>
-        </div>
-        <button id="submit-button" type="submit" class="btn btn-outline-success">Submit Comment</button>
-      </form>
+      <% if (user) { %>
+        <form class="card-footer bg-dark" method="POST" action="/characters/<%= character._id %>/comments">
+            <div class="form-group">
+                <label for="comment" class="poiret">Comment:</label>
+                <textarea
+                    class="form-control"
+                    id="comment"
+                    name="comment"
+                    rows="4"
+                    required
+                ></textarea>
+            </div>
+            <button id="submit-button" type="submit" class="btn btn-outline-success">Submit Comment</button>
+        </form>
+        <% } %>
+        
+    
 
       <!-- Display existing comments -->
       
