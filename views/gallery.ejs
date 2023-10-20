@@ -8,10 +8,10 @@
     <div class="card mb-4">
       <div class="card-body bg-dark">
         <h5 class="card-title poiret" style="color: white;"><strong>Name:</strong> <%= character.name %></h5>
-        <p class="card-text"><strong>Race:</strong> <%= character.race %></p>
-        <p class="card-text"><strong>Background:</strong> <%= character.background %></p>
-        <p class="card-text"><strong>Class:</strong> <%= character.dndClass %></p>
-        <p class="card-text"><strong>Equipment:</strong> <%= character.equipment.join(', ') %></p>
+        <p class="card-text poiret-sub"><strong>Race:</strong> <%= character.race %></p>
+        <p class="card-text poiret-sub"><strong>Background:</strong> <%= character.background %></p>
+        <p class="card-text poiret-sub"><strong>Class:</strong> <%= character.dndClass %></p>
+        <p class="card-text poiret-sub"><strong>Equipment:</strong> <%= character.equipment.join(', ') %></p>
         <a href="/characters/gallery/<%= character._id %>/story" class="btn btn-outline-primary">View An Exclusive One Time Character Story</a>
       </div>
 

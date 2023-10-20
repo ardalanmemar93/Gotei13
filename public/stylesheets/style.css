@@ -227,3 +227,11 @@ p {
 p {
   color: white;
 }
+
+.poiret-card {
+  font-family: Poiret One;
+  font-size: 2em;
+}
+.poiret-sub {
+  font-family: poiret;
+}
