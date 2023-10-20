@@ -3,6 +3,9 @@
 #create-color {
   color: rgba(0, 0, 0, 0.65);
 }
+.navbar {
+  opacity: 0.70;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -67,7 +70,7 @@ p {
 }
 
 .gallery-body {
-  background-image: url("/images/gallery.jpeg");
+  background-image: url("/images/profile-body.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
