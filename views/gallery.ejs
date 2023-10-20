@@ -19,7 +19,7 @@
       <% if (user) { %>
         <form class="card-footer bg-dark" method="POST" action="/characters/<%= character._id %>/comments">
             <div class="form-group">
-                <label for="comment" class="poiret">Comment:</label>
+                <label for="comment" class="poiret text-white">Comment:</label>
                 <textarea
                     class="form-control"
                     id="comment"
@@ -37,7 +37,7 @@
       <!-- Display existing comments -->
       
       <div class="card-footer bg-dark">
-        <h3 class="poiret">Comments:</h3>
+        <h3 class="poiret text-white">Comments:</h3>
         <ul class="list-group">
           <% character.comments.forEach(function(comment) { %>
             <div>

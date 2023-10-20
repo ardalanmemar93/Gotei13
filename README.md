@@ -5,7 +5,7 @@
 
 "Gotei13" is a web application that enables users to create, publish, and view characters, access a character gallery, comment on characters created by others, and read AI-generated stories about these characters, providing a platform for collaborative storytelling and community interaction.
 
-# A live build can be found [here](https://gotei13-56c0be88deb9.herokuapp.com/).
+# A live build can be found [here](https://gotei13-61d7a1b24567.herokuapp.com/).
 
 ## Tools
 
