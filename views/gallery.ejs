@@ -41,7 +41,7 @@
         <ul class="list-group">
           <% character.comments.forEach(function(comment) { %>
             <div>
-            <li class="list-group-item">
+            <li class="list-group-item poiret-sub">
               <%= comment.text %>
             </div>
             <% if (user && comment.author.toString() === user._id.toString()) { %>
